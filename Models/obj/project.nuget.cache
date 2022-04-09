@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "FStTjHj3Eps6ZsaJla0RSgfNXJsNBvNUsSLI6BaSU9doipG+WipM43dj8bz4S4eNDp5QbD56y3T7R+i6xSlIrg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gandensang\\Software\\c# exrush\\NuggetPack\\PaymentGateway\\Models\\Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gandensang\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\gandensang\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

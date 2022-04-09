@@ -1,0 +1,10 @@
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\bin\Debug\netstandard2.0\Duitku.deps.json
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\bin\Debug\netstandard2.0\Duitku.dll
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\bin\Debug\netstandard2.0\Duitku.pdb
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\obj\Debug\netstandard2.0\Duitku.csproj.AssemblyReference.cache
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\obj\Debug\netstandard2.0\Duitku.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\obj\Debug\netstandard2.0\Duitku.AssemblyInfoInputs.cache
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\obj\Debug\netstandard2.0\Duitku.AssemblyInfo.cs
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\obj\Debug\netstandard2.0\Duitku.csproj.CoreCompileInputs.cache
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\obj\Debug\netstandard2.0\Duitku.dll
+C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\obj\Debug\netstandard2.0\Duitku.pdb
