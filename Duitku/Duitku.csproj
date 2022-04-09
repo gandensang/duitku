@@ -1,21 +1,23 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+	<PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Budi Santoso</Authors>
     <Company>PT Exrush Digital Nusantara</Company>
     <Description>Duitku payment Gateway</Description>
     <Copyright>MIT</Copyright>
+    <RepositoryUrl>https://github.com/gandensang/duitku</RepositoryUrl>
+    <PackageTags>duitku, duitku payment gateway</PackageTags>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/gandensang/duitku</PackageProjectUrl>
+    <Version>1.0.4</Version>
+    <PackageReleaseNotes>- update success response</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Commons\Commons.csproj" />
-    <ProjectReference Include="..\Models\Models.csproj" />
   </ItemGroup>
 
 </Project>

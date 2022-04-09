@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Duitku</id>
+    <version>1.0.1</version>
+    <authors>Budi Santoso</authors>
+    <license type="expression">MIT OR Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/MIT%20OR%20Apache-2.0</licenseUrl>
+    <projectUrl>https://github.com/gandensang/duitku</projectUrl>
+    <description>Duitku payment Gateway</description>
+    <releaseNotes>fixed bug in model</releaseNotes>
+    <copyright>MIT</copyright>
+    <tags>duitku, duitku payment gateway</tags>
+    <repository url="https://github.com/gandensang/duitku" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\gandensang\Software\c# exrush\NuggetPack\PaymentGateway\Duitku\bin\Debug\netstandard2.0\Duitku.dll" target="lib\netstandard2.0\Duitku.dll" />
+  </files>
+</package>

@@ -34,26 +34,6 @@
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
-      },
-      "Commons/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Commons.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Commons.dll": {}
-        }
-      },
-      "Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "compile": {
-          "bin/placeholder/Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Models.dll": {}
-        }
       }
     }
   },
@@ -228,22 +208,10 @@
         "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
-    },
-    "Commons/1.0.0": {
-      "type": "project",
-      "path": "../Commons/Commons.csproj",
-      "msbuildProject": "../Commons/Commons.csproj"
-    },
-    "Models/1.0.0": {
-      "type": "project",
-      "path": "../Models/Models.csproj",
-      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "Commons >= 1.0.0",
-      "Models >= 1.0.0",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 13.0.1"
     ]
@@ -254,7 +222,7 @@
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
-    "version": "1.0.0",
+    "version": "1.0.4",
     "restore": {
       "projectUniqueName": "C:\\Users\\gandensang\\Software\\c# exrush\\NuggetPack\\PaymentGateway\\Duitku\\Duitku.csproj",
       "projectName": "Duitku",
@@ -283,14 +251,7 @@
       "frameworks": {
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
-          "projectReferences": {
-            "C:\\Users\\gandensang\\Software\\c# exrush\\NuggetPack\\PaymentGateway\\Commons\\Commons.csproj": {
-              "projectPath": "C:\\Users\\gandensang\\Software\\c# exrush\\NuggetPack\\PaymentGateway\\Commons\\Commons.csproj"
-            },
-            "C:\\Users\\gandensang\\Software\\c# exrush\\NuggetPack\\PaymentGateway\\Models\\Models.csproj": {
-              "projectPath": "C:\\Users\\gandensang\\Software\\c# exrush\\NuggetPack\\PaymentGateway\\Models\\Models.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
