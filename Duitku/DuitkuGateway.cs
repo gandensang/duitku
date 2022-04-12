@@ -36,9 +36,9 @@ namespace Duitku
             }
         }
 
-        public async Task<ServiceResponse<string>> MakePayment(DuitkuOrderModel order)
+        public async Task<DuitkuServiceResponse<string>> MakePayment(DuitkuOrderModel order)
         {
-            var response = new ServiceResponse<string>();
+            var response = new DuitkuServiceResponse<string>();
             try
             {
 
@@ -56,7 +56,7 @@ namespace Duitku
 
                     var content = await getResponse.Content.ReadAsStringAsync();
 
-                    response.Data = content + _merchantKey + _merchantCode;
+                    response.Data = content;
                 }
             }
             catch (Exception err)
@@ -67,6 +67,43 @@ namespace Duitku
             }
             return response;
         }
+        public DuitkuServiceResponse<bool> VerifikasiTransaksi(string merchantCode, int amount, string merchantOrderId, string signature, string merchantKey)
+        {
+            var response = new DuitkuServiceResponse<bool>();
+            try
+            {
+                // jika parameter ada yang kosong
+                if (string.IsNullOrEmpty(merchantCode) || string.IsNullOrEmpty(merchantOrderId) || string.IsNullOrEmpty(merchantKey))
+                {
+                    response.Success = false;
+                    response.Message = "Bad Parameter";
+                    return response;
+                }
+
+                // jika parameter berar, susun untuk check md5
+                var checkSignature = CreateSignature($"{merchantCode}{merchantOrderId}{amount}{merchantKey}");
+
+                // verifikasi md5 dengan versi server
+                if (checkSignature != signature)
+                {
+                    // gagal
+                    response.Success = false;
+                    response.Message = "Wrong signature";
+                    return response;
+                }
+
+                response.Data = true;
+            }
+            catch (Exception err)
+            {
+                response.Success = false;
+                response.Message = err.Message;
+                
+            }
+            return response;
+        }
+
+        #region custom function
         DuitkuModel CreateData(DuitkuOrderModel detailOrder)
         {
 
@@ -101,10 +138,11 @@ namespace Duitku
 
             var dataOrder = new DuitkuModel
             {
+                MerchantOrderId = detailOrder.MerchantOrderId,
                 MerchantCode = _merchantCode,
                 MerchantKey = _merchantKey,
                 PaymentAmount = detailOrder.PaymentAmount,
-                PaymentMethod = detailOrder.PaymentMethod.ToString(),
+                PaymentMethod = detailOrder.PaymentMethod,
                 // merchandOrderId saat buat parameterAja sekalian buat signature
                 ProductDetails = detailOrder.DetailOrder,
                 CustomerVaName = detailOrder.CustomerVaName,
@@ -113,26 +151,24 @@ namespace Duitku
                 CustomerDetail = costumerDetail,
                 CallbackUrl = _callbackUrl,
                 ReturnUrl = _returnUrl,
-                ExpiryPeriod = _minuteExpired
+                ExpiryPeriod = _minuteExpired,
+                AdditionalParam = detailOrder.AdditionalParam
             };
 
             return dataOrder;
         }
-        private string CreateSignature(string stringData)
+        public string CreateSignature(string stringData)
         {
             byte[] asciiBytes = Encoding.ASCII.GetBytes(stringData);
             byte[] hashedBytes = MD5.Create().ComputeHash(asciiBytes);
             string hashResult = BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             return hashResult;
         }
-
         StringContent CreateParameter(DuitkuModel dataDuitku)
         {
-            string merchantOrderId = Guid.NewGuid().ToString();
             
-            var signature = CreateSignature($"{_merchantCode}{merchantOrderId}{dataDuitku.PaymentAmount}{_merchantKey}");
+            var signature = CreateSignature($"{_merchantCode}{dataDuitku.MerchantOrderId}{dataDuitku.PaymentAmount}{_merchantKey}");
             dataDuitku.Signature = signature;
-            dataDuitku.MerchantOrderId = merchantOrderId;
 
 
             var jsonValue = JsonConvert.SerializeObject(dataDuitku);
@@ -140,6 +176,7 @@ namespace Duitku
 
             return param;
         }
+        #endregion
     }
 
 
@@ -173,6 +210,7 @@ namespace Duitku
         public string ReturnUrl { get; set; }
         public string Signature { get; set; }
         public int ExpiryPeriod { get; set; } = 300;
+        public string AdditionalParam { get; set; }
     }
 
     class DuitkuCostumerDetail

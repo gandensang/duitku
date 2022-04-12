@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Duitku.commons
 {
-    public class ServiceResponse<T>
+    public class DuitkuServiceResponse<T>
     {
         public bool Success { get; set; } = true;
         public string Message { get; set; } = "Ok";

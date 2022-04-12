@@ -11,7 +11,7 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
-      "Duitku/1.0.4": {
+      "Duitku/1.0.7": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -54,7 +54,7 @@
         "packageIcon.png"
       ]
     },
-    "Duitku/1.0.4": {
+    "Duitku/1.0.7": {
       "type": "project",
       "path": "../Duitku/Duitku.csproj",
       "msbuildProject": "../Duitku/Duitku.csproj"
@@ -62,7 +62,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Duitku >= 1.0.4"
+      "Duitku >= 1.0.7"
     ]
   },
   "packageFolders": {

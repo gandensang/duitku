@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "ConsoleTest/1.0.0": {
         "dependencies": {
-          "Duitku": "1.0.3"
+          "Duitku": "1.0.7"
         },
         "runtime": {
           "ConsoleTest.dll": {}
@@ -22,7 +22,7 @@
           }
         }
       },
-      "Duitku/1.0.3": {
+      "Duitku/1.0.7": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
@@ -45,7 +45,7 @@
       "path": "newtonsoft.json/13.0.1",
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
-    "Duitku/1.0.3": {
+    "Duitku/1.0.7": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

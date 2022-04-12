@@ -10,6 +10,7 @@ namespace ConsoleTest
         {
             var orderModel = new DuitkuOrderModel
             {
+                MerchantOrderId = Guid.NewGuid().ToString(),
                 Address = "alamat",
                 PaymentAmount = 10000,
                 City = "tulungagung",
@@ -17,15 +18,16 @@ namespace ConsoleTest
                 DetailOrder = "uji cona",
                 FirstName = "budi santoso",
                 LastName = "Last name",
-                PaymentMethod = DuitkuPaymentMethod.M2,
+                PaymentMethod = DuitkuPaymentMethod.M2.ToString(),
                 Phone = "0897843",
                 PostalCode = "66281",
-                OderList = new List<DuitkuItem>
+                AdditionalParam = "Other param",
+                OderLists = new List<DuitkuItem>
                         {
                             new DuitkuItem
                             {
                                 Name = "produk 1",
-                                Price = 10000,
+                                TotalPrice = 10000,
                                 Quantity = 1
                             }
                         }
@@ -36,10 +38,13 @@ namespace ConsoleTest
             string merchantKey = "d0e998140e0d34a229be1a56b54c05b9";
             string callbackUrl = "https://exrush.com/callback";
             string returnUrl = "https://exrush.com/testing";
-
+            string orderId = "3b0ca6f4-6bd0-439c-8d99-4f5cf1961864";
+            int amount = 10000;
 
             var duitku = new DuitkuGateway(merchantCode, merchantKey, callbackUrl, returnUrl, true);
-            var hasil =  duitku.MakePayment(orderModel).GetAwaiter().GetResult();
+            // var hasil =  duitku.MakePayment(orderModel).GetAwaiter().GetResult();
+
+            var getCode = duitku.CreateSignature($"{merchantCode}{orderId}{amount}{merchantKey}");
         }
     }
 }
